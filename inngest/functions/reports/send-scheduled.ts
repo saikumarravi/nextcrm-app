@@ -94,7 +94,7 @@ export const reportSendScheduled = inngest.createFunction(
           attachments.push({ filename: `${schedule.reportConfig.category}-report.pdf`, content: pdfBuffer });
         }
 
-        await resend.emails.send({
+        await getResend().emails.send({
           from: process.env.RESEND_FROM_EMAIL!,
           to: schedule.recipients as string[],
           subject: `Report: ${schedule.reportConfig.name}`,
