@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
     const presignedUrl = await getSignedUrl(minioClient, command, { expiresIn: 600 });
 
     // The public URL where the file will be accessible after upload
-    const fileUrl = `${MINIO_PUBLIC_URL}/${MINIO_BUCKET}/${key}`;
+    const fileUrl = `${MINIO_PUBLIC_URL}/${key}`;
 
     return NextResponse.json({ presignedUrl, fileUrl, key });
   } catch (err) {
