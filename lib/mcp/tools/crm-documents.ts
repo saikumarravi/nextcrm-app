@@ -122,7 +122,7 @@ export const crmDocumentTools = [
         ? args.document_name.split(".").pop()?.trim() || "bin"
         : "bin";
       const key = `documents/${randomUUID()}.${ext}`;
-      const fileUrl = `${MINIO_PUBLIC_URL}/${MINIO_BUCKET}/${key}`;
+      const fileUrl = `${MINIO_PUBLIC_URL}/${key}`;
 
       const doc = await prismadb.documents.create({
         data: {
