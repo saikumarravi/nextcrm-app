@@ -57,7 +57,7 @@ export const generateDocumentThumbnail = inngest.createFunction(
       })
     );
 
-    const thumbnailUrl = `${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/${MINIO_BUCKET}/${thumbnailKey}`;
+    const thumbnailUrl = `${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/${thumbnailKey}`;
 
     await prismadb.documents.update({
       where: { id: documentId },
